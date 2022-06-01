@@ -12,6 +12,10 @@ export class AppService {
     return 'Hello World!';
   }
 
+  async listUser(){
+    return this.userModel.find({}).then(user => user).catch(err => console.log(err))
+  }
+
   async createUser(body): Promise<User> {
     const newUser = new this.userModel(body);
     return newUser.save()

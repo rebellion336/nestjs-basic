@@ -6,9 +6,14 @@ import { User } from './model/user-model';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  // @Get()
+  // getHello(): string {
+  //   return this.appService.getHello();
+  // }
+  
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  getUser() {
+    return this.appService.listUser();
   }
 
   @Post()
