@@ -6,7 +6,7 @@ import { UserSchema } from './model/user-model';
 
 @Module({
   imports: [
-    MongooseModule.forRoot("mongodb://localhost:27017/nestjs-crud"),
+    MongooseModule.forRoot("mongodb://localhost:27017/nestjs-basic"),
     MongooseModule.forFeature([{ name: 'user', schema: UserSchema}])
   ],
   controllers: [AppController],
