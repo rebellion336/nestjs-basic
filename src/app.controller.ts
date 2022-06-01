@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { AppService } from './app.service';
 import { User } from './model/user-model';
 import { UserUpdateDto } from './model/update-uesr-model'
@@ -25,5 +25,10 @@ export class AppController {
   @Put(':id')
   updateUser(@Param("id") id: string, @Body() UserUpdateDto: UserUpdateDto): Promise<User> {
     return this.appService.updateUser(id, UserUpdateDto)
+  }
+
+  @Delete(':id')
+  deleteUser(@Param('id') id: string){
+    return this.appService.deleteUser(id)
   }
 }
